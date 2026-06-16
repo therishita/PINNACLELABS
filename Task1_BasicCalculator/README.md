@@ -8,6 +8,7 @@ A simple and aesthetic calculator application built using **Python** and **Tkint
 * Subtraction
 * Multiplication
 * Division
+* Square Root
 * Backspace button to delete the last entered character
 * Clear button to reset the calculator
 * Displays the previous calculation as a small history above the result
