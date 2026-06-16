@@ -87,6 +87,29 @@ def calculate():
         expression = ""
 
 
+#root operator
+import math
+
+def square_root():
+    global expression
+    try:
+        value = float(expression)
+        result = math.sqrt(value)
+
+        if result == int(result):
+            result = int(result)
+
+        history_label.config(text=f"√({expression}) =")
+        display.config(text=result)
+
+        expression = str(result)
+
+    except:
+        display.config(text="Error")
+        history_label.config(text="")
+        expression = ""
+
+
 number_color = "#AAB7C4"
 operator_color = "#5B8FB9"
 special_color = "#7D8CA3"
@@ -159,7 +182,7 @@ Button(
     sticky="nsew"
 )
 
-# Decimal button
+#decimal
 Button(
     root,
     text=".",
@@ -172,7 +195,24 @@ Button(
 ).grid(
     row=5,
     column=2,
-    columnspan=2,
+    padx=2,
+    pady=2,
+    sticky="nsew"
+)
+
+#root
+Button(
+    root,
+    text="√",
+    font=("Arial", 16, "bold"),
+    bg=number_color,
+    fg="white",
+    bd=0,
+    activebackground=number_color,
+    command=square_root
+).grid(
+    row=5,
+    column=3,
     padx=2,
     pady=2,
     sticky="nsew"
